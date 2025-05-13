@@ -89,8 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
       loadClientePage();
     });
   
-
-  
  //Usuário
   function loadClientePage() {
     const htmlContent = `
@@ -263,7 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.close();
   }
 
-
+//homeScreen
   function abrirNovaTela() {
     const novaJanela = window.open('', '_blank');
     const htmlContent = `
