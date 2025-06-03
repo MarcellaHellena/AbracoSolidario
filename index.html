@@ -1,72 +1,76 @@
+<!-- Carregar diferentes index.html via <iframe> Você pode usar <iframe> para carregar diferentes páginas dentro da principal:
+
+    html
+    <iframe src="outra_pasta/index.html" width="800" height="600"></iframe>
+    Isso permite exibir outro index.html dentro da página.
+    
+    Usar JavaScript para alterar o conteúdo dinamicamente Se você quer trocar entre diferentes páginas sem recarregar a página principal, pode usar fetch() para carregar o conteúdo de outros index.html e inserir dentro de um <div>:
+    
+    html
+    <div id="conteudo"></div>
+    <button onclick="carregarPagina('outra_pasta/index.html')">Abrir outra página</button>
+    
+    <script>
+        function carregarPagina(url) {
+            fetch(url)
+            .then(response => response.text())
+            .then(data => document.getElementById('conteudo').innerHTML = data);
+        }
+    </script>
+    Isso permite carregar partes diferentes do site sem mudar a URL.
+    
+    Usar roteamento em frameworks Se você estiver trabalhando com React, Vue.js ou Angular, pode usar o sistema de rotas para carregar diferentes index.html dentro de um único projeto. -->
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Caridade</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .login-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            text-align: center;
-        }
-        .login-container h1 {
-            margin-bottom: 20px;
-            color: #333;
-        }
-        .login-container input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-        .login-container button {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            background-color: #007BFF;
-            border: none;
-            border-radius: 4px;
-            color: #fff;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .login-container button:hover {
-            background-color: #0056b3;
-        }
-        .login-container a {
-            display: block;
-            margin-top: 10px;
-            color: #007BFF;
-            text-decoration: none;
-        }
-        .login-container a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <title>Abraço Solidário</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <div class="login-container">
-        <h1>Login</h1>
-        <form>
-            <button id="cliente" type="submit">Usuario</button>
-            <button id="Instituição" type="submit">Instituição</button>
-        </form>
+    <div class="header">
+        <div class="logo">Abraço <br> Solidário</div>
+        <div class="search-bar">
+            <select>
+                <option value="todas">Categorias</option>
+            </select>
+            <input type="text" placeholder="Procurar caridade">
+            <button>Procurar</button>
+        </div>
+        <div class="icons">
+            <img src="imagens/perfil1.png" alt="Usuario de login">
+        </div>
     </div>
-    <script src="script.js"></script>
+    
+    <div class="nav-bar">
+        <div class="dropdown">
+            <a href="#">A PLATAFORMA</a>
+            <div class="dropdown-content">
+                <a href="#">Nosso trabalho</a>
+                <a href="#">Equipe</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">CATEGORIAS</a>
+            <div class="dropdown-content">
+                <a href="#">Brinquedo</a>
+                <a href="#">Calçados</a>
+                <a href="#">Alimentos</a>
+                <a href="#">Higiene pessoal</a>
+                <a href="#">Roupas</a>
+                <a href="#">Cobertores</a>
+                <a href="#">Prdutos de limpeza</a>
+                <a href="#">Favoritos</a>
+            </div>
+        </div>
+        <a href="#">INSTITUIÇÕES</a>
+        <a href="#">CONTACTE-NOS</a>
+    </div>
+    <div class="nosso-trabalho">
+        <img src="imagens/trabalho (1).png" alt="">
+    </div>
 </body>
 </html>
